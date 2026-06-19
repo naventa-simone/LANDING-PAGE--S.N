@@ -1,0 +1,167 @@
+:root { 
+    --primary-green: #001E62; 
+    --primary-blue: #0033A0;  
+    --accent-red: #DB0A13; 
+    --accent-gold: #F7C600
+    --text-dark: #1E293B; 
+    --bg-light: #F8FAFC; 
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); 
+} 
+ 
+body {  
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;  
+    margin: 0;  
+    background-color: var(--bg-light); 
+    color: var(--text-dark); 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+} 
+ 
+/* NAVBAR */ 
+.navbar {  
+    display: flex;  
+    justify-content: space-between;  
+    padding: 15px 8%;  
+    background: white;  
+    align-items: center;  
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+} 
+.logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; } 
+.brand-green { color: var(--primary-green); } 
+.brand-dark { color: #000000; } 
+ 
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; margin: 0; padding: 0; } 
+.nav-links a { text-decoration: none; color: #475569; font-weight: 600; font-size: 0.95rem; transition: color 
+0.2s; } 
+.nav-links a:hover, .nav-links a.active { color: var(--primary-green); } 
+.btn-contact { background: var(--accent-red); color: white !important; padding: 10px 24px; border-radius: 
+25px; transition: opacity 0.2s; } 
+.btn-contact:hover { opacity: 0.9; } 
+ 
+/* SECCIONES SPA */ 
+.content-section { display: none; padding: 60px 8%; flex-grow: 1; } 
+.content-section.active { display: block; animation: fadeIn 0.4s ease-in-out; } 
+ 
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(8px); } 
+    to { opacity: 1; transform: translateY(0); } 
+} 
+ 
+.section-title { text-align: center; margin-bottom: 40px; } 
+.section-title h2 { font-size: 2rem; color: #000; margin-bottom: 10px; } 
+.section-title p { color: #64748B; font-size: 1.05rem; margin: 0; } 
+ 
+/* HERO / CONTAINER PRINCIPAL */ 
+.hero-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; 
+} 
+.product-showcase { display: flex; align-items: center; gap: 50px; flex-grow: 1; justify-content: center; } 
+ 
+/* BOTELLA */ 
+.energy-bottle-container { 
+    width: 140px; 
+    height: 340px; 
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    filter: drop-shadow(0 20px 35px rgba( 219, 10, 19, 0.25)); 
+} 
+.bottle-cap { width: 50px; height: 25px; background: #CCCCCC; border-radius: 6px 6px 2px 2px; border
+bottom: 3px solid #999; } 
+.bottle-neck { width: 44px; height: 30px; background: rgba(255, 255, 255, 0.7); } 
+.bottle-body { 
+    width: 110px; height: 260px; 
+    background: linear-gradient(to right, #001E62, #0033A0); 
+    border-radius: 30px 30px 25px 25px; position: relative; overflow: hidden; 
+    display: flex; align-items: center; justify-content: center; 
+} 
+.liquid-glow { position: absolute; top: 0; left: 15%; width: 25%; height: 100%; background: linear-gradient(to 
+right, rgba(255,255,255,0.4), rgba(255,255,255,0)); } 
+.bottle-label { width: 100%; background: white; padding: 15px 0; text-align: center; transform: skewY(
+4deg); z-index: 2;} 
+.label-logo { font-size: 1.1rem; } 
+.label-title { font-size: 0.85rem; font-weight: 800; color: var(--primary-green); } 
+.label-subtitle { font-size: 0.55rem; font-weight: 700; color: #64748B; } 
+ 
+.benefits { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px; } 
+.benefits li { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.2rem; color: #000; } 
+.check-icon { color: #F7C600; font-size: 1.4rem; } 
+/* FORMULARIO */ 
+.registration-form { background: var(--primary-blue); color: #F7C600; padding: 40px; border-radius: 24px; 
+width: 380px; box-shadow: 0 20px 40px rgba(15, 76, 129, 0.25); } 
+.registration-form h2 { margin-top: 0; margin-bottom: 8px; font-size: 1.7rem; } 
+.registration-form p { margin-top: 0; color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.4; } 
+.registration-form input { width: 100%; padding: 14px; margin: 10px 0; border-radius: 8px; border: none; 
+box-sizing: border-box; font-size: 1rem; } 
+.btn-submit { width: 100%; padding: 14px; background: var(--accent-red); color: white; border: none; cursor: 
+pointer; font-weight: 700; border-radius: 8px; font-size: 1.1rem; margin-top: 10px; } 
+.form-footer { font-size: 0.85rem; text-align: center; margin-top: 20px; } 
+.form-footer a { color: white; font-weight: 700; } 
+/* FEATURES INFERIORES */ 
+.info-section { display: flex; justify-content: space-between; padding-top: 80px; gap: 30px; } 
+.info-card { width: 31%; background: white; padding: 25px;border-top: 8px solid #DB0A13; border-radius: 16px; box-shadow: var(--card
+shadow); } 
+.card-header-feature { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; } 
+.feature-check { background: var(--primary-blue); color: white; width: 24px; height: 24px; border-radius: 
+50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; } 
+.info-card h3 { color: #001e62; font-size: 1.1rem; font-weight: 700; margin: 0; } 
+.info-card p { color: #64748B; font-size: 0.9rem; line-height: 1.5; margin: 0; } 
+/* SECCIÓN PRODUCTOS CARDS */ 
+.grid-cards { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; } 
+.card { background: white; padding: 30px; border-radius: 16px; width: 28%; min-width: 280px; position: 
+relative; box-shadow: 0 10px 30px rgba(255,255,255,0.8); display: flex; flex-direction: column; } 
+.badge-product { position: absolute; top: 15px; right: 15px; background: var(--primary-green); color: white; 
+font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; } 
+.card h3 { margin-top: 10px; font-size: 1.25rem; color: #000; } 
+.product-desc { color: #64748B; font-size: 0.9rem; line-height: 1.5; flex-grow: 1; margin-bottom: 20px; } 
+.product-price { font-size: 1.4rem; font-weight: 800; color: var(--primary-blue); } 
+/* SECCIÓN RECURSOS */ 
+.resources-grid { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; } 
+.resource-item { background: white; padding: 20px 30px; border-radius: 12px; display: flex; align-items: 
+center; gap: 25px; box-shadow: var(--card-shadow); } 
+.resource-icon { font-size: 2rem; background: #F7C600 ;color: #001E62; width: 60px; height: 60px; display: flex; align-items: 
+center; justify-content: center; border-radius: 50%; } 
+.resource-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: #000; } 
+.resource-item p { margin: 0; color: #64748B; font-size: 0.9rem; line-height: 1.4; } 
+/* SECCIÓN BLOG */ 
+.blog-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; } 
+.blog-post { background: white; border-radius: 16px; width: 45%; min-width: 320px; overflow: hidden; box
+shadow: var(--card-shadow); display: flex; } 
+.blog-img-thumb { width: 100px; background: #E2E8F0; display: flex; align-items: center; justify-content: 
+center; font-size: 2.5rem; } 
+.blog-body-content { padding: 25px; flex-grow: 1; } 
+.blog-tag { background: #F7C600; color: #001E62; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; 
+border-radius: 6px; } 
+.blog-post h3 { font-size: 1.2rem; margin: 12px 0 6px 0; color: #000; } 
+.blog-post .date { font-size: 0.8rem; color: #64748B; margin: 0 0 12px 0; } 
+.blog-post p { color: #64748B; font-size: 0.9rem; line-height: 1.5; margin: 0; } 
+/* FOOTER */ 
+.site-footer { background: #0B1F3A; color: #94A3B8; text-align: center; padding: 25px 0; margin-top: auto; 
+font-size: 0.85rem; } 
+.footer-info { display: flex; justify-content: center; gap: 50px; margin-bottom: 8px; flex-wrap: wrap; } 
+ 
+@media (max-width: 992px) { 
+    .hero-content, .product-showcase, .info-section, .grid-cards { justify-content: center; } 
+    .info-card, .card, .blog-post { width: 100%; } 
+    .blog-post { flex-direction: column; } 
+    .blog-img-thumb { width: 100%; height: 80px; } 
+} 
+ 
+/* ESTILOS PARA LA NUEVA IMAGEN DEL PRODUCTO */ 
+.product-image-container { 
+    width: 350px; /* Tamaño ideal para que luzca idéntico al mockup */ 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    filter: drop-shadow(0 20px 40px rgba(0, 30, 98, 0.25)); /* Sombra sutil para darle realismo */ 
+} 
+ 
+.product-image-fluid { 
+    max-width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+} 
